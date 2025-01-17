@@ -1,0 +1,155 @@
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 7676    Method:             REML                   
+No. Groups:       64      Scale:              0.0412                 
+Min. group size:  118     Log-Likelihood:     1240.6987              
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.846     0.013  63.719  0.000   0.820   0.872
+DistObjPlayerStart     -0.004     0.001  -6.615  0.000  -0.005  -0.003
+Group Var               0.008     0.007                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 7676    Method:             REML                   
+No. Groups:       64      Scale:              0.0412                 
+Min. group size:  118     Log-Likelihood:     1239.2803              
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+---------------------------------------------------------------------
+                            Coef. Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------------------
+Intercept                   0.789    0.012 67.547 0.000  0.766  0.812
+AlloStartPosAligned[T.True] 0.028    0.005  6.075 0.000  0.019  0.037
+Group Var                   0.008    0.007                           
+=====================================================================
+Friedman ANOVA Results:
+            Source        W   ddof1     ddof2        F        p-unc
+AlloStartPosOrient 0.128092 6.96875 439.03125 9.255367 1.148415e-10
+
+Friedman test is significant. Performing post-hoc comparisons...
+
+Post-hoc Test Results:
+Test Multiple Comparison wilcoxon 
+FWER=0.05 method=s
+alphacSidak=0.00, alphacBonf=0.002
+============================================
+group1 group2  stat   pval  pval_corr reject
+--------------------------------------------
+     E      N  441.0 0.0001    0.0017   True
+     E     NE  988.0  0.728       1.0  False
+     E     NW  964.0 0.6113       1.0  False
+     E      S 1018.0  0.883       1.0  False
+     E     SE  702.0 0.0238    0.4905  False
+     E     SW  614.0 0.0044    0.1158  False
+     E      W  902.0 0.3561       1.0  False
+     N     NE  392.0    0.0    0.0004   True
+     N     NW  313.0    0.0       0.0   True
+     N      S  493.0 0.0003    0.0071   True
+     N     SE  185.0    0.0       0.0   True
+     N     SW  182.0    0.0       0.0   True
+     N      W  563.0 0.0014    0.0391   True
+    NE     NW  898.0 0.3423       1.0  False
+    NE      S  957.0 0.5789       1.0  False
+    NE     SE  628.0 0.0059    0.1518  False
+    NE     SW  552.0 0.0011    0.0304   True
+    NE      W  895.0 0.3322       1.0  False
+    NW      S 1015.0 0.8672       1.0  False
+    NW     SE  710.0 0.0273    0.5396  False
+    NW     SW  601.0 0.0033    0.0891  False
+    NW      W  795.0 0.1013    0.9498  False
+     S     SE  719.0 0.0318    0.5956  False
+     S     SW  633.0 0.0065    0.1667  False
+     S      W  924.0 0.4379       1.0  False
+    SE     SW 1014.0  0.862       1.0  False
+    SE      W  696.0 0.0214    0.4546  False
+    SW      W  554.0 0.0012    0.0318   True
+--------------------------------------------Friedman ANOVA Results:
+           Source       W    ddof1     ddof2         F        p-unc
+EgoStartPosOrient 0.15318 10.96875 691.03125 11.396003 1.316301e-19
+
+Friedman test is significant. Performing post-hoc comparisons...
+
+Post-hoc Test Results:
+Test Multiple Comparison wilcoxon 
+FWER=0.05 method=s
+alphacSidak=0.00, alphacBonf=0.001
+============================================
+group1 group2  stat   pval  pval_corr reject
+--------------------------------------------
+     A     AL  516.0 0.0005    0.0298   True
+     A     AR  632.0 0.0064    0.3438  False
+     A      B  254.0    0.0       0.0   True
+     A     BL  161.0    0.0       0.0   True
+     A     BR  193.0    0.0       0.0   True
+     A      L  201.0    0.0       0.0   True
+     A     LA  262.0    0.0       0.0   True
+     A     LB  206.0    0.0       0.0   True
+     A      R  330.0    0.0    0.0001   True
+     A     RA  406.0    0.0    0.0015   True
+     A     RB  156.0    0.0       0.0   True
+    AL     AR  964.0 0.6113       1.0  False
+    AL      B  570.0 0.0017    0.1045  False
+    AL     BL  575.0 0.0019    0.1164  False
+    AL     BR  434.0 0.0001    0.0033   True
+    AL      L  519.0 0.0005    0.0321   True
+    AL     LA  667.0 0.0126    0.5674  False
+    AL     LB  536.0 0.0008    0.0483   True
+    AL      R  759.0 0.0602    0.9834  False
+    AL     RA  837.0 0.1746       1.0  False
+    AL     RB  376.0    0.0    0.0006   True
+    AR      B  539.0 0.0008    0.0519  False
+    AR     BL  507.0 0.0004    0.0238   True
+    AR     BR  354.0    0.0    0.0003   True
+    AR      L  506.0 0.0004    0.0232   True
+    AR     LA  527.0 0.0006     0.039   True
+    AR     LB  403.0    0.0    0.0013   True
+    AR      R  546.0  0.001    0.0611  False
+    AR     RA  745.0 0.0485    0.9625  False
+    AR     RB  332.0    0.0    0.0001   True
+     B     BL  981.0 0.6932       1.0  False
+     B     BR  798.0 0.1056    0.9994  False
+     B      L  951.0 0.5517       1.0  False
+     B     LA 1027.0 0.9307       1.0  False
+     B     LB  937.0 0.4909       1.0  False
+     B      R  875.0 0.2698       1.0  False
+     B     RA  820.0 0.1412       1.0  False
+     B     RB  729.0 0.0375      0.92  False
+    BL     BR  797.0 0.1041    0.9993  False
+    BL      L  929.0 0.4579       1.0  False
+    BL     LA 1018.0  0.883       1.0  False
+    BL     LB  937.0 0.4909       1.0  False
+    BL      R  874.0 0.2669       1.0  False
+    BL     RA  777.0 0.0786    0.9955  False
+    BL     RB  768.0 0.0689     0.991  False
+    BR      L  997.0 0.7737       1.0  False
+    BR     LA  893.0 0.3256       1.0  False
+    BR     LB 1004.0 0.8097       1.0  False
+    BR      R  767.0 0.0679    0.9903  False
+    BR     RA  602.0 0.0034    0.2013  False
+    BR     RB  892.0 0.3223       1.0  False
+     L     LA  924.0 0.4379       1.0  False
+     L     LB  969.0 0.6349       1.0  False
+     L      R  778.0 0.0798    0.9959  False
+     L     RA  707.0  0.026    0.8237  False
+     L     RB  916.0  0.407       1.0  False
+    LA     LB  928.0 0.4539       1.0  False
+    LA      R  818.0 0.1376    0.9999  False
+    LA     RA  797.0 0.1041    0.9993  False
+    LA     RB  798.0 0.1056    0.9994  False
+    LB      R  845.0 0.1922       1.0  False
+    LB     RA  562.0 0.0014    0.0877  False
+    LB     RB  939.0 0.4994       1.0  False
+     R     RA  761.0 0.0621    0.9854  False
+     R     RB  611.0 0.0041    0.2384  False
+    RA     RB  547.0  0.001    0.0625  False
+--------------------------------------------

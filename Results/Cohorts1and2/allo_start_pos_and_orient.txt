@@ -1,0 +1,63 @@
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0371                  
+Min. group size:  118     Log-Likelihood:     1646.5188               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.875     0.011  79.115  0.000   0.853   0.897
+DistObjPlayerStart      -0.001     0.001  -0.969  0.332  -0.002   0.001
+Group Var                0.005     0.005                               
+======================================================================
+Friedman ANOVA Results:
+            Source        W   ddof1     ddof2         F        p-unc
+AlloStartPosOrient 0.152774 6.96875 439.03125 11.360316 3.209025e-13
+
+Friedman test is significant. Performing post-hoc comparisons...
+
+Post-hoc Test Results:
+Test Multiple Comparison wilcoxon 
+FWER=0.05 method=s
+alphacSidak=0.00, alphacBonf=0.002
+============================================
+group1 group2  stat   pval  pval_corr reject
+--------------------------------------------
+     E      N  614.0 0.0044    0.1158  False
+     E     NE  884.0 0.2968    0.9999  False
+     E     NW  604.0 0.0035    0.0947  False
+     E      S  692.0   0.02    0.4312  False
+     E     SE  736.0 0.0421    0.6997  False
+     E     SW  691.0 0.0196    0.4255  False
+     E      W 1024.0 0.9148       1.0  False
+     N     NE  712.0 0.0283     0.552  False
+     N     NW  940.0 0.5037       1.0  False
+     N      S  328.0    0.0    0.0001   True
+     N     SE  379.0    0.0    0.0003   True
+     N     SW  215.0    0.0       0.0   True
+     N      W  613.0 0.0043    0.1136  False
+    NE     NW  865.0 0.2419    0.9996  False
+    NE      S  511.0 0.0004    0.0112   True
+    NE     SE  581.0 0.0021    0.0583  False
+    NE     SW  461.0 0.0001     0.003   True
+    NE      W  791.0 0.0959    0.9405  False
+    NW      S  332.0    0.0    0.0001   True
+    NW     SE  497.0 0.0003    0.0079   True
+    NW     SW  343.0    0.0    0.0001   True
+    NW      W  681.0 0.0164    0.3699  False
+     S     SE  903.0 0.3596       1.0  False
+     S     SW  990.0 0.7381       1.0  False
+     S      W  656.0 0.0102    0.2501  False
+    SE     SW  804.0 0.1145    0.9668  False
+    SE      W  834.0 0.1683    0.9943  False
+    SW      W  753.0 0.0549    0.7945  False
+--------------------------------------------Friedman ANOVA Results:
+           Source        W    ddof1     ddof2        F    p-unc
+EgoStartPosOrient 0.011545 10.96875 691.03125 0.735805 0.703998
+
+Friedman test is not significant. No post-hoc tests performed.

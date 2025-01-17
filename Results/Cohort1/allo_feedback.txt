@@ -1,0 +1,104 @@
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0367                  
+Min. group size:  118     Log-Likelihood:     845.0931                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+----------------------------------------------------------------------
+                             Coef. Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.854    0.012 72.355 0.000  0.831  0.877
+AlloWithAlloFeedback[T.True] 0.030    0.006  4.816 0.000  0.018  0.042
+Group Var                    0.004    0.006                           
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0369                  
+Min. group size:  118     Log-Likelihood:     837.9307                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+----------------------------------------------------------------------
+                            Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.878    0.012 74.388 0.000  0.855  0.901
+AlloWithEgoFeedback[T.True] -0.018    0.006 -2.968 0.003 -0.031 -0.006
+Group Var                    0.004    0.006                           
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0367                  
+Min. group size:  118     Log-Likelihood:     843.3220                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+------------------------------------------------------------------------
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.868      0.013   69.004   0.000    0.844    0.893
+C(RetIdx)[T.2.0]     0.019      0.009    2.209   0.027    0.002    0.036
+C(RetIdx)[T.3.0]    -0.029      0.009   -3.307   0.001   -0.046   -0.012
+C(RetIdx)[T.4.0]     0.011      0.009    1.304   0.192   -0.006    0.029
+Group Var            0.004      0.006                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0369                  
+Min. group size:  118     Log-Likelihood:     826.4074                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+------------------------------------------------------------------------
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.878      0.012   73.828   0.000    0.855    0.901
+TimeSinceEncEnd     -0.000      0.000   -2.428   0.015   -0.000   -0.000
+Group Var            0.004      0.005                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1918    Method:             REML                    
+No. Groups:       32      Scale:              0.0354                  
+Min. group size:  59      Log-Likelihood:     435.7463                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  59.9                                                
+-------------------------------------------------------------------------
+                Coef.     Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.887       0.014    63.489    0.000     0.860     0.915
+TimeSinceEnc    -0.000       0.000    -2.033    0.042    -0.000    -0.000
+Group Var        0.003       0.005                                       
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1918    Method:             REML                    
+No. Groups:       32      Scale:              0.0387                  
+Min. group size:  59      Log-Likelihood:     348.4038                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  59.9                                                
+-------------------------------------------------------------------------
+                Coef.     Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.878       0.013    67.037    0.000     0.852     0.904
+TimeSinceEnc    -0.000       0.000    -1.915    0.055    -0.000     0.000
+Group Var        0.004       0.006                                       
+======================================================================

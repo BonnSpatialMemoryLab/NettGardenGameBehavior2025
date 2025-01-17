@@ -1,0 +1,68 @@
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0370                  
+Min. group size:  118     Log-Likelihood:     1657.3747               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.890     0.010  87.956  0.000   0.870   0.909
+DistObjNearestFence     -0.006     0.001  -4.592  0.000  -0.009  -0.004
+Group Var                0.005     0.005                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0370                  
+Min. group size:  118     Log-Likelihood:     1658.9577               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+------------------------------------------------------------------------
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.889      0.010   89.925   0.000    0.870    0.909
+DistObjFenceN       -0.002      0.000   -5.166   0.000   -0.003   -0.001
+Group Var            0.005      0.005                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0370                  
+Min. group size:  118     Log-Likelihood:     1662.2591               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.910     0.012  78.065  0.000   0.887   0.933
+DistObjNearestCorner    -0.005     0.001  -5.618  0.000  -0.007  -0.003
+Group Var                0.005     0.005                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0372                  
+Min. group size:  118     Log-Likelihood:     1646.3998               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+------------------------------------------------------------------------
+                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.868      0.010   87.722   0.000    0.848    0.887
+DistObjNearestTree   0.000      0.001    0.223   0.823   -0.001    0.002
+Group Var            0.005      0.005                                   
+======================================================================

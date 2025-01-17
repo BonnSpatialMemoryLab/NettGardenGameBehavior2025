@@ -1,0 +1,122 @@
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0430                 
+Min. group size:  118     Log-Likelihood:     534.5766               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                        Coef.  Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.785     0.017  46.416  0.000   0.752   0.818
+DistObjNearestFence     0.004     0.002   1.926  0.054  -0.000   0.008
+Group Var               0.007     0.009                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0429                 
+Min. group size:  118     Log-Likelihood:     535.4496               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.829     0.021  40.181  0.000   0.789   0.870
+DistObjNearestFence     0.002     0.002   0.962  0.336  -0.002   0.006
+DistObjPlayerStart     -0.004     0.001  -3.718  0.000  -0.005  -0.002
+Group Var               0.007     0.009                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0429                 
+Min. group size:  118     Log-Likelihood:     537.2463               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+-----------------------------------------------------------------------
+                   Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+-----------------------------------------------------------------------
+Intercept           0.820      0.017   49.425   0.000    0.787    0.852
+DistObjFenceN      -0.002      0.001   -3.393   0.001   -0.003   -0.001
+Group Var           0.007      0.009                                   
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0428                 
+Min. group size:  118     Log-Likelihood:     539.1963               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.858     0.019  44.863  0.000   0.821   0.896
+DistObjFenceN          -0.002     0.001  -3.308  0.001  -0.003  -0.001
+DistObjPlayerStart     -0.004     0.001  -4.006  0.000  -0.006  -0.002
+Group Var               0.007     0.009                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0430                 
+Min. group size:  118     Log-Likelihood:     534.7145               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                        Coef.  Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.773     0.019  39.886  0.000   0.735   0.811
+DistObjNearestCorner    0.003     0.001   2.155  0.031   0.000   0.006
+Group Var               0.007     0.009                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0429                 
+Min. group size:  118     Log-Likelihood:     535.3987               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.821     0.023  35.287  0.000   0.775   0.867
+DistObjNearestCorner    0.002     0.002   1.218  0.223  -0.001   0.005
+DistObjPlayerStart     -0.004     0.001  -3.667  0.000  -0.005  -0.002
+Group Var               0.007     0.009                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0431                 
+Min. group size:  118     Log-Likelihood:     532.9321               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.806     0.017  48.384  0.000   0.773   0.839
+DistObjNearestTree     -0.002     0.001  -1.159  0.247  -0.004   0.001
+Group Var               0.007     0.009                               
+=====================================================================

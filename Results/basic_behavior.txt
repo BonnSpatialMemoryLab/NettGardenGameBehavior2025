@@ -1,0 +1,35 @@
+Total number of subjects in cohort 1: 32
+Total number of subjects in cohort 2: 32
+Total number of subjects in additional subjects: 16
+
+Average age in cohort 1:
+Mean: 25, SD: 3, Min.: 18, Max.: 33
+
+Average age in cohort 2:
+Mean: 25, SD: 4, Min.: 20, Max.: 40
+
+Average age in the additional subjects:
+Mean: 27, SD: 7, Min.: 19, Max.: 53
+
+Number of females in cohort 1: 17
+Number of females in cohort 2: 17
+Number of females in the additional subjects: 7
+
+Duration per session (minutes):
+Mean: 66.19, SEM: 1.56, Min.: 42.85, Max.: 96.39
+
+Duration of starting position per session (minutes):
+Mean: 5.06, SEM: 0.2, Min.: 2.94, Max.: 9.31
+
+Duration of encoding per session (minutes):
+Mean: 25.22, SEM: 0.84, Min.: 13.01, Max.: 43.42
+
+Duration of allocentric retrieval per session (minutes):
+Mean: 9.33, SEM: 0.36, Min.: 4.61, Max.: 20.02
+
+Duration of egocentric retrieval per session (minutes):
+Mean: 12.25, SEM: 0.6, Min.: 5.67, Max.: 28.58
+
+Duration of encoding per session (minutes):
+Mean: 1.59, SEM: 0.14, Min.: 0.38, Max.: 5.88
+

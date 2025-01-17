@@ -1,0 +1,18 @@
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3836    Method:             REML                   
+No. Groups:       32      Scale:              0.0431                 
+Min. group size:  118     Log-Likelihood:     531.5087               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  119.9                                              
+-----------------------------------------------------------------------
+                   Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+-----------------------------------------------------------------------
+Intercept           0.853      0.144    5.926   0.000    0.571    1.135
+Gender[T.male]      0.025      0.033    0.737   0.461   -0.041    0.090
+Age                -0.003      0.006   -0.449   0.653   -0.014    0.009
+Group Var           0.008      0.010                                   
+=====================================================================

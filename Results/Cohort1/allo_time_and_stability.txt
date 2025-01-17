@@ -1,0 +1,111 @@
+Paired t-test between allocentric and egocentric memory performance:
+t = 5.25, p = 1.050e-05
+
+Pearson correlation between allocentric and egocentric memory performance:
+t = 0.536, p = 1.549e-03
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0368                  
+Min. group size:  118     Log-Likelihood:     840.7129                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+-------------------------------------------------------------------------
+                 Coef.    Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.844       0.013    66.810    0.000     0.819     0.868
+TrialIdx         0.001       0.000     4.638    0.000     0.000     0.001
+Group Var        0.004       0.006                                       
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1918    Method:             REML                    
+No. Groups:       32      Scale:              0.0360                  
+Min. group size:  59      Log-Likelihood:     425.8370                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  59.9                                                
+-------------------------------------------------------------------------
+                 Coef.    Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.844       0.014    60.832    0.000     0.817     0.871
+TrialIdx         0.001       0.000     4.650    0.000     0.001     0.002
+Group Var        0.004       0.006                                       
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1918    Method:             REML                    
+No. Groups:       32      Scale:              0.0371                  
+Min. group size:  59      Log-Likelihood:     394.4606                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  59.9                                                
+-------------------------------------------------------------------------
+                 Coef.    Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.843       0.015    58.150    0.000     0.815     0.872
+TrialIdx         0.000       0.000     1.950    0.051    -0.000     0.001
+Group Var        0.004       0.006                                       
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0369                  
+Min. group size:  118     Log-Likelihood:     839.0886                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+------------------------------------------------------------------------
+                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.859      0.012   72.734   0.000    0.835    0.882
+StableObj[T.True]    0.021      0.006    3.337   0.001    0.009    0.033
+Group Var            0.004      0.006                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3836    Method:             REML                    
+No. Groups:       32      Scale:              0.0366                  
+Min. group size:  118     Log-Likelihood:     836.8669                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+----------------------------------------------------------------------
+                             Coef. Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.859    0.012 72.743 0.000  0.835  0.882
+StableObj[T.True]            0.021    0.006  3.347 0.001  0.009  0.033
+TrialIdx                     0.000    0.000  1.962 0.050  0.000  0.001
+TrialIdx:StableObj[T.True]   0.001    0.000  1.871 0.061 -0.000  0.001
+Group Var                    0.004    0.006                           
+======================================================================
+
+
+                   Mixed Linear Model Regression Results
+===========================================================================
+Model:                  MixedLM       Dependent Variable:       Performance
+No. Observations:       7672          Method:                   REML       
+No. Groups:             32            Scale:                    0.0412     
+Min. group size:        236           Log-Likelihood:           1282.2070  
+Max. group size:        240           Converged:                Yes        
+Mean group size:        239.8                                              
+---------------------------------------------------------------------------
+                                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------------------------
+Intercept                         0.859    0.012 68.946 0.000  0.834  0.883
+RetType[T.ego]                   -0.059    0.007 -9.032 0.000 -0.072 -0.046
+StableObj[T.True]                 0.021    0.007  3.156 0.002  0.008  0.034
+RetType[T.ego]:StableObj[T.True] -0.022    0.009 -2.385 0.017 -0.040 -0.004
+Group Var                         0.004    0.006                           
+===========================================================================
