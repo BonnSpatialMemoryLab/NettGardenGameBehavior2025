@@ -66,3 +66,142 @@ Intercept            0.863      0.015   56.486   0.000    0.833    0.893
 DistObjNearestTree   0.001      0.001    1.074   0.283   -0.001    0.003
 Group Var            0.006      0.009                                   
 ======================================================================
+
+One-way ANOVA for AlloRetRankedPerformance grouped by TreeConfig
+F-statistic: 0.6278, p-value: 0.6031
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0376                  
+Min. group size:  60      Log-Likelihood:     378.0860                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.890     0.019  46.223  0.000   0.853   0.928
+DistObjNearestFence     -0.004     0.004  -1.126  0.260  -0.012   0.003
+Group Var                0.007     0.011                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0367                  
+Min. group size:  60      Log-Likelihood:     404.8894                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.876     0.016  54.349  0.000   0.844   0.907
+DistObjNearestFence     -0.004     0.002  -1.816  0.069  -0.009   0.000
+Group Var                0.005     0.008                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0376                  
+Min. group size:  60      Log-Likelihood:     376.9678                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+------------------------------------------------------------------------
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.889      0.018   50.784   0.000    0.855    0.923
+DistObjFenceN       -0.001      0.001   -1.484   0.138   -0.003    0.000
+Group Var            0.007      0.011                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0366                  
+Min. group size:  60      Log-Likelihood:     406.5196                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+------------------------------------------------------------------------
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.884      0.016   55.926   0.000    0.853    0.915
+DistObjFenceN       -0.002      0.001   -2.936   0.003   -0.004   -0.001
+Group Var            0.005      0.008                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0375                  
+Min. group size:  60      Log-Likelihood:     379.4596                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.913     0.022  41.155  0.000   0.870   0.957
+DistObjNearestCorner    -0.005     0.002  -2.256  0.024  -0.009  -0.001
+Group Var                0.007     0.011                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0367                  
+Min. group size:  60      Log-Likelihood:     404.7520                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.887     0.020  44.780  0.000   0.848   0.926
+DistObjNearestCorner    -0.003     0.002  -1.884  0.060  -0.007   0.000
+Group Var                0.005     0.008                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0376                  
+Min. group size:  60      Log-Likelihood:     376.8728                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+------------------------------------------------------------------------
+                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.872      0.018   49.459   0.000    0.838    0.907
+DistObjNearestTree   0.001      0.002    0.741   0.459   -0.002    0.004
+Group Var            0.007      0.011                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 1920    Method:             REML                    
+No. Groups:       32      Scale:              0.0368                  
+Min. group size:  60      Log-Likelihood:     402.9447                
+Max. group size:  60      Converged:          Yes                     
+Mean group size:  60.0                                                
+------------------------------------------------------------------------
+                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.859      0.016   54.432   0.000    0.828    0.890
+DistObjNearestTree   0.000      0.002    0.058   0.954   -0.003    0.003
+Group Var            0.005      0.008                                   
+======================================================================

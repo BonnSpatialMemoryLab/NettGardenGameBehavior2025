@@ -33,3 +33,9 @@ Mean: 12.25, SEM: 0.6, Min.: 5.67, Max.: 28.58
 Duration of encoding per session (minutes):
 Mean: 1.59, SEM: 0.14, Min.: 0.38, Max.: 5.88
 
+t-test, Allocentric performance (with vs. without bike handles): t = 0.599, p = 0.551
+t-test, Egocentric performance (with vs. without bike handles): t = 0.054, p = 0.957
+
+t-test, Time viewing the gaze area (stable vs. unstable objects): t = -0.410, p = 0.685
+
+t-test, Distance to nearest fence (stable vs. unstable objects): t = 8.978, p = 0.000

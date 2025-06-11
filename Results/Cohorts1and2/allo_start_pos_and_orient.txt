@@ -15,9 +15,26 @@ Intercept                0.875     0.011  79.115  0.000   0.853   0.897
 DistObjPlayerStart      -0.001     0.001  -0.969  0.332  -0.002   0.001
 Group Var                0.005     0.005                               
 ======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0372                  
+Min. group size:  118     Log-Likelihood:     1648.0410               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+----------------------------------------------------------------------
+                             Coef. Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.869    0.009 93.677 0.000  0.850  0.887
+AlloStartPosAligned[T.True]  0.000    0.004  0.065 0.948 -0.008  0.009
+Group Var                    0.005    0.005                           
+======================================================================
 Friedman ANOVA Results:
-            Source        W   ddof1     ddof2         F        p-unc
-AlloStartPosOrient 0.152774 6.96875 439.03125 11.360316 3.209025e-13
+                 Source        W   ddof1     ddof2         F        p-unc
+AlloStartPosOrient8Bins 0.152774 6.96875 439.03125 11.360316 3.209025e-13
 
 Friedman test is significant. Performing post-hoc comparisons...
 
@@ -56,6 +73,85 @@ group1 group2  stat   pval  pval_corr reject
     SE     SW  804.0 0.1145    0.9668  False
     SE      W  834.0 0.1683    0.9943  False
     SW      W  753.0 0.0549    0.7945  False
+--------------------------------------------Friedman ANOVA Results:
+                  Source        W    ddof1     ddof2        F        p-unc
+AlloStartPosOrient12Bins 0.102218 10.96875 691.03125 7.172945 1.318038e-11
+
+Friedman test is significant. Performing post-hoc comparisons...
+
+Post-hoc Test Results:
+Test Multiple Comparison wilcoxon 
+FWER=0.05 method=s
+alphacSidak=0.00, alphacBonf=0.001
+============================================
+group1 group2  stat   pval  pval_corr reject
+--------------------------------------------
+     E      N  584.0 0.0023    0.1405  False
+     E     NE  761.0 0.0621    0.9854  False
+     E    NNE  629.0  0.006    0.3272  False
+     E    NNW  628.0 0.0059    0.3217  False
+     E     NW  725.0 0.0352    0.9058  False
+     E      S  831.0 0.1622       1.0  False
+     E     SE  924.0 0.4379       1.0  False
+     E    SSE  795.0 0.1013    0.9991  False
+     E    SSW  873.0 0.2641       1.0  False
+     E     SW  777.0 0.0786    0.9955  False
+     E      W 1014.0  0.862       1.0  False
+     N     NE  825.0 0.1505       1.0  False
+     N    NNE  847.0 0.1968       1.0  False
+     N    NNW  887.0 0.3062       1.0  False
+     N     NW  792.0 0.0972    0.9988  False
+     N      S  385.0    0.0    0.0008   True
+     N     SE  498.0 0.0003    0.0189   True
+     N    SSE  383.0    0.0    0.0007   True
+     N    SSW  387.0    0.0    0.0008   True
+     N     SW  284.0    0.0       0.0   True
+     N      W  662.0 0.0115    0.5332  False
+    NE    NNE  919.0 0.4184       1.0  False
+    NE    NNW  863.0 0.2365       1.0  False
+    NE     NW  974.0 0.6589       1.0  False
+    NE      S  696.0 0.0214    0.7605  False
+    NE     SE  782.0 0.0845     0.997  False
+    NE    SSE  632.0 0.0064    0.3438  False
+    NE    SSW  702.0 0.0238     0.796  False
+    NE     SW  673.0 0.0141    0.6087  False
+    NE      W  821.0  0.143       1.0  False
+   NNE    NNW 1028.0  0.936       1.0  False
+   NNE     NW  968.0 0.6302       1.0  False
+   NNE      S  476.0 0.0002    0.0106   True
+   NNE     SE  555.0 0.0012     0.075  False
+   NNE    SSE  455.0 0.0001     0.006   True
+   NNE    SSW  437.0 0.0001    0.0036   True
+   NNE     SW  540.0 0.0008    0.0531  False
+   NNE      W  712.0 0.0283    0.8493  False
+   NNW     NW  852.0 0.2087       1.0  False
+   NNW      S  495.0 0.0003    0.0175   True
+   NNW     SE  532.0 0.0007    0.0439   True
+   NNW    SSE  421.0    0.0    0.0023   True
+   NNW    SSW  401.0    0.0    0.0013   True
+   NNW     SW  508.0 0.0004    0.0244   True
+   NNW      W  623.0 0.0053    0.2955  False
+    NW      S  554.0 0.0012    0.0733  False
+    NW     SE  760.0 0.0611    0.9844  False
+    NW    SSE  595.0 0.0029    0.1756  False
+    NW    SSW  633.0 0.0065    0.3494  False
+    NW     SW  622.0 0.0052    0.2904  False
+    NW      W  805.0 0.1161    0.9997  False
+     S     SE  991.0 0.7431       1.0  False
+     S    SSE 1001.0 0.7942       1.0  False
+     S    SSW 1015.0 0.8672       1.0  False
+     S     SW 1024.0 0.9148       1.0  False
+     S      W  779.0 0.0809    0.9962  False
+    SE    SSE  819.0 0.1394       1.0  False
+    SE    SSW  997.0 0.7737       1.0  False
+    SE     SW  841.0 0.1833       1.0  False
+    SE      W  899.0 0.3457       1.0  False
+   SSE    SSW  915.0 0.4032       1.0  False
+   SSE     SW 1036.0 0.9787       1.0  False
+   SSE      W  733.0 0.0401    0.9327  False
+   SSW     SW 1035.0 0.9733       1.0  False
+   SSW      W  833.0 0.1663       1.0  False
+    SW      W  837.0 0.1746       1.0  False
 --------------------------------------------Friedman ANOVA Results:
            Source        W    ddof1     ddof2        F    p-unc
 EgoStartPosOrient 0.011545 10.96875 691.03125 0.735805 0.703998

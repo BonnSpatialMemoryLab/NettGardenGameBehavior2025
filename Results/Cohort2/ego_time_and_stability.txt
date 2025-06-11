@@ -77,6 +77,24 @@ Group Var               0.009     0.012
 =====================================================================
 Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
 No. Observations: 3840    Method:             REML                   
+No. Groups:       32      Scale:              0.0397                 
+Min. group size:  120     Log-Likelihood:     679.2561               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  120.0                                              
+----------------------------------------------------------------------
+                       Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+----------------------------------------------------------------------
+Intercept               0.797     0.019  41.715  0.000   0.760   0.835
+StableObj[T.True]      -0.001     0.007  -0.148  0.883  -0.014   0.012
+DistObjNearestFence     0.002     0.002   1.244  0.213  -0.001   0.006
+Group Var               0.009     0.012                               
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3840    Method:             REML                   
 No. Groups:       32      Scale:              0.0392                 
 Min. group size:  120     Log-Likelihood:     694.4156               
 Max. group size:  120     Converged:          Yes                    
@@ -88,6 +106,26 @@ Intercept                   0.807    0.018 46.043 0.000  0.772  0.841
 StableObj[T.True]          -0.003    0.006 -0.511 0.609 -0.016  0.009
 TrialIdx                    0.001    0.000  3.491 0.000  0.000  0.001
 TrialIdx:StableObj[T.True]  0.001    0.000  1.932 0.053 -0.000  0.001
+Group Var                   0.009    0.012                           
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3840    Method:             REML                   
+No. Groups:       32      Scale:              0.0392                 
+Min. group size:  120     Log-Likelihood:     689.8417               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  120.0                                              
+---------------------------------------------------------------------
+                           Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------------------
+Intercept                   0.797    0.019 41.781 0.000  0.760  0.835
+StableObj[T.True]          -0.001    0.007 -0.160 0.873 -0.014  0.012
+TrialIdx                    0.001    0.000  3.463 0.001  0.000  0.001
+TrialIdx:StableObj[T.True]  0.001    0.000  1.956 0.050 -0.000  0.001
+DistObjNearestFence         0.002    0.002  1.211 0.226 -0.001  0.006
 Group Var                   0.009    0.012                           
 =====================================================================
 

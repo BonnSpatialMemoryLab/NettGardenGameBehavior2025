@@ -192,14 +192,14 @@ Group Var        0.006       0.009
 Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
 No. Observations: 3840    Method:             REML                    
 No. Groups:       32      Scale:              0.0373                  
-Min. group size:  120     Log-Likelihood:     813.4871                
+Min. group size:  120     Log-Likelihood:     811.4720                
 Max. group size:  120     Converged:          Yes                     
 Mean group size:  120.0                                               
 ------------------------------------------------------------------------
-                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+                    Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
 ------------------------------------------------------------------------
-Intercept            0.867      0.014   60.680   0.000    0.839    0.895
-EyeEncGazeArea       0.469      0.304    1.539   0.124   -0.128    1.065
+Intercept            0.870      0.014   60.371   0.000    0.842    0.898
+EyeEncGazeArea      -0.069      0.108   -0.639   0.523   -0.281    0.143
 Group Var            0.006      0.009                                   
 ======================================================================
 
@@ -209,14 +209,14 @@ Group Var            0.006      0.009
 Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
 No. Observations: 3840    Method:             REML                    
 No. Groups:       32      Scale:              0.0373                  
-Min. group size:  120     Log-Likelihood:     810.2674                
+Min. group size:  120     Log-Likelihood:     810.5402                
 Max. group size:  120     Converged:          Yes                     
 Mean group size:  120.0                                               
 ----------------------------------------------------------------------
                             Coef.  Std.Err.   z    P>|z| [0.025 0.975]
 ----------------------------------------------------------------------
-Intercept                    0.872    0.015 57.705 0.000  0.843  0.902
-EyeEncGazeAreaAndAnimal     -0.022    0.031 -0.714 0.475 -0.082  0.038
+Intercept                    0.874    0.015 57.236 0.000  0.845  0.904
+EyeEncGazeAreaAndAnimal     -0.032    0.030 -1.039 0.299 -0.091  0.028
 Group Var                    0.006    0.009                           
 ======================================================================
 
@@ -235,4 +235,38 @@ Mean group size:  120.0
 Intercept            0.876      0.015   57.059   0.000    0.846    0.906
 EyeEncCoverage      -0.143      0.107   -1.330   0.183   -0.353    0.068
 Group Var            0.006      0.009                                   
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3840    Method:             REML                    
+No. Groups:       32      Scale:              0.0373                  
+Min. group size:  120     Log-Likelihood:     813.3979                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  120.0                                               
+-------------------------------------------------------------------------
+                 Coef.    Std.Err.      z       P>|z|    [0.025    0.975]
+-------------------------------------------------------------------------
+Intercept        0.868       0.014    60.779    0.000     0.840     0.895
+EyeEncTrees      0.471       0.332     1.421    0.155    -0.179     1.121
+Group Var        0.006       0.009                                       
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 3840    Method:             REML                    
+No. Groups:       32      Scale:              0.0373                  
+Min. group size:  120     Log-Likelihood:     812.9785                
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  120.0                                               
+------------------------------------------------------------------------
+                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
+------------------------------------------------------------------------
+Intercept            0.841      0.017   48.185   0.000    0.807    0.876
+EyeEncLandmarks      0.056      0.022    2.579   0.010    0.013    0.098
+Group Var            0.006      0.008                                   
 ======================================================================

@@ -77,6 +77,24 @@ Group Var            0.005      0.005
 ======================================================================
 Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
 No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0370                  
+Min. group size:  118     Log-Likelihood:     1658.7057               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+-----------------------------------------------------------------------
+                        Coef.   Std.Err.    z     P>|z|  [0.025  0.975]
+-----------------------------------------------------------------------
+Intercept                0.878     0.011  82.017  0.000   0.857   0.899
+StableObj[T.True]        0.016     0.005   3.408  0.001   0.007   0.024
+DistObjNearestFence     -0.005     0.001  -3.539  0.000  -0.008  -0.002
+Group Var                0.005     0.005                               
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
 No. Groups:       64      Scale:              0.0368                  
 Min. group size:  118     Log-Likelihood:     1667.0926               
 Max. group size:  120     Converged:          Yes                     
@@ -88,6 +106,26 @@ Intercept                    0.859    0.009 92.319 0.000  0.841  0.877
 StableObj[T.True]            0.020    0.004  4.506 0.000  0.011  0.028
 TrialIdx                     0.001    0.000  3.499 0.000  0.000  0.001
 TrialIdx:StableObj[T.True]   0.000    0.000  1.809 0.070 -0.000  0.001
+Group Var                    0.005    0.005                           
+======================================================================
+
+
+                Mixed Linear Model Regression Results
+======================================================================
+Model:            MixedLM Dependent Variable: AlloRetRankedPerformance
+No. Observations: 7676    Method:             REML                    
+No. Groups:       64      Scale:              0.0368                  
+Min. group size:  118     Log-Likelihood:     1668.0176               
+Max. group size:  120     Converged:          Yes                     
+Mean group size:  119.9                                               
+----------------------------------------------------------------------
+                            Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.878    0.011 82.126 0.000  0.857  0.899
+StableObj[T.True]            0.015    0.005  3.397 0.001  0.007  0.024
+TrialIdx                     0.001    0.000  3.601 0.000  0.000  0.001
+TrialIdx:StableObj[T.True]   0.000    0.000  1.733 0.083 -0.000  0.001
+DistObjNearestFence         -0.005    0.001 -3.632 0.000 -0.008 -0.002
 Group Var                    0.005    0.005                           
 ======================================================================
 

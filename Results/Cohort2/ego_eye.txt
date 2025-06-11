@@ -188,18 +188,37 @@ Group Var       0.009       0.012
 
 
                 Mixed Linear Model Regression Results
+======================================================================
+Model:             MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations:  3840    Method:             REML                   
+No. Groups:        32      Scale:              0.0397                 
+Min. group size:   120     Log-Likelihood:     686.0102               
+Max. group size:   120     Converged:          Yes                    
+Mean group size:   120.0                                              
+----------------------------------------------------------------------
+                            Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------
+Intercept                    0.768    0.022 34.831 0.000  0.725  0.811
+Gender[T.male]               0.078    0.032  2.429 0.015  0.015  0.141
+EyeEncAnimal                 0.091    0.043  2.149 0.032  0.008  0.175
+EyeEncAnimal:Gender[T.male] -0.069    0.065 -1.063 0.288 -0.195  0.058
+Group Var                    0.008    0.011                           
+======================================================================
+
+
+                Mixed Linear Model Regression Results
 =====================================================================
 Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
 No. Observations: 3840    Method:             REML                   
 No. Groups:       32      Scale:              0.0397                 
-Min. group size:  120     Log-Likelihood:     689.6104               
+Min. group size:  120     Log-Likelihood:     686.6852               
 Max. group size:  120     Converged:          Yes                    
 Mean group size:  120.0                                              
 -----------------------------------------------------------------------
                     Coef.   Std.Err.     z      P>|z|   [0.025   0.975]
 -----------------------------------------------------------------------
-Intercept           0.803      0.017   46.521   0.000    0.769    0.837
-EyeEncGazeArea      0.639      0.314    2.034   0.042    0.023    1.255
+Intercept           0.804      0.017   46.305   0.000    0.770    0.838
+EyeEncGazeArea      0.067      0.112    0.597   0.551   -0.152    0.285
 Group Var           0.009      0.012                                   
 =====================================================================
 
@@ -209,14 +228,14 @@ Group Var           0.009      0.012
 Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
 No. Observations: 3840    Method:             REML                   
 No. Groups:       32      Scale:              0.0397                 
-Min. group size:  120     Log-Likelihood:     687.3594               
+Min. group size:  120     Log-Likelihood:     687.2247               
 Max. group size:  120     Converged:          Yes                    
 Mean group size:  120.0                                              
 ---------------------------------------------------------------------
                             Coef. Std.Err.   z    P>|z| [0.025 0.975]
 ---------------------------------------------------------------------
-Intercept                   0.794    0.018 44.001 0.000  0.759  0.830
-EyeEncGazeAreaAndAnimal     0.065    0.032  2.053 0.040  0.003  0.128
+Intercept                   0.794    0.018 43.663 0.000  0.758  0.829
+EyeEncGazeAreaAndAnimal     0.063    0.031  1.993 0.046  0.001  0.124
 Group Var                   0.009    0.012                           
 =====================================================================
 
@@ -234,5 +253,39 @@ Mean group size:  120.0
 -----------------------------------------------------------------------
 Intercept           0.831      0.019   44.628   0.000    0.795    0.868
 EyeEncCoverage     -0.502      0.111   -4.523   0.000   -0.720   -0.285
+Group Var           0.010      0.013                                   
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3840    Method:             REML                   
+No. Groups:       32      Scale:              0.0397                 
+Min. group size:  120     Log-Likelihood:     687.9367               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  120.0                                              
+------------------------------------------------------------------------
+                Coef.    Std.Err.      z       P>|z|    [0.025    0.975]
+------------------------------------------------------------------------
+Intercept       0.804       0.017    46.644    0.000     0.771     0.838
+EyeEncTrees     0.269       0.342     0.786    0.432    -0.402     0.940
+Group Var       0.009       0.012                                       
+=====================================================================
+
+
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:            MixedLM Dependent Variable: EgoRetRankedPerformance
+No. Observations: 3840    Method:             REML                   
+No. Groups:       32      Scale:              0.0397                 
+Min. group size:  120     Log-Likelihood:     688.3222               
+Max. group size:  120     Converged:          Yes                    
+Mean group size:  120.0                                              
+-----------------------------------------------------------------------
+                   Coef.    Std.Err.     z      P>|z|   [0.025   0.975]
+-----------------------------------------------------------------------
+Intercept           0.834      0.021   40.238   0.000    0.793    0.874
+EyeEncLandmarks    -0.059      0.022   -2.618   0.009   -0.102   -0.015
 Group Var           0.010      0.013                                   
 =====================================================================

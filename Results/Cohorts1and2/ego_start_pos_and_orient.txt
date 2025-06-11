@@ -33,8 +33,8 @@ AlloStartPosAligned[T.True] 0.028    0.005  6.075 0.000  0.019  0.037
 Group Var                   0.008    0.007                           
 =====================================================================
 Friedman ANOVA Results:
-            Source        W   ddof1     ddof2        F        p-unc
-AlloStartPosOrient 0.128092 6.96875 439.03125 9.255367 1.148415e-10
+                 Source        W   ddof1     ddof2        F        p-unc
+AlloStartPosOrient8Bins 0.128092 6.96875 439.03125 9.255367 1.148415e-10
 
 Friedman test is significant. Performing post-hoc comparisons...
 
@@ -73,6 +73,85 @@ group1 group2  stat   pval  pval_corr reject
     SE     SW 1014.0  0.862       1.0  False
     SE      W  696.0 0.0214    0.4546  False
     SW      W  554.0 0.0012    0.0318   True
+--------------------------------------------Friedman ANOVA Results:
+                  Source       W    ddof1     ddof2        F        p-unc
+AlloStartPosOrient12Bins 0.10313 10.96875 691.03125 7.244277 9.643807e-12
+
+Friedman test is significant. Performing post-hoc comparisons...
+
+Post-hoc Test Results:
+Test Multiple Comparison wilcoxon 
+FWER=0.05 method=s
+alphacSidak=0.00, alphacBonf=0.001
+============================================
+group1 group2  stat   pval  pval_corr reject
+--------------------------------------------
+     E      N  535.0 0.0007    0.0472   True
+     E     NE  861.0 0.2313       1.0  False
+     E    NNE  924.0 0.4379       1.0  False
+     E    NNW  873.0 0.2641       1.0  False
+     E     NW  840.0 0.1811       1.0  False
+     E      S 1000.0 0.7891       1.0  False
+     E     SE  777.0 0.0786    0.9955  False
+     E    SSE  688.0 0.0186    0.7098  False
+     E    SSW  613.0 0.0043    0.2473  False
+     E     SW  660.0  0.011    0.5196  False
+     E      W  966.0 0.6207       1.0  False
+     N     NE  317.0    0.0    0.0001   True
+     N    NNE  667.0 0.0126    0.5674  False
+     N    NNW  583.0 0.0022    0.1377  False
+     N     NW  337.0    0.0    0.0002   True
+     N      S  599.0 0.0032    0.1899  False
+     N     SE  313.0    0.0    0.0001   True
+     N    SSE  220.0    0.0       0.0   True
+     N    SSW  211.0    0.0       0.0   True
+     N     SW  308.0    0.0    0.0001   True
+     N      W  595.0 0.0029    0.1756  False
+    NE    NNE  626.0 0.0056     0.311  False
+    NE    NNW  756.0 0.0575      0.98  False
+    NE     NW 1018.0  0.883       1.0  False
+    NE      S  808.0 0.1208    0.9998  False
+    NE     SE  882.0 0.2907       1.0  False
+    NE    SSE  911.0 0.3883       1.0  False
+    NE    SSW  804.0 0.1145    0.9997  False
+    NE     SW  789.0 0.0932    0.9984  False
+    NE      W  709.0 0.0269    0.8342  False
+   NNE    NNW 1024.0 0.9148       1.0  False
+   NNE     NW  628.0 0.0059    0.3217  False
+   NNE      S  866.0 0.2446       1.0  False
+   NNE     SE  627.0 0.0057    0.3164  False
+   NNE    SSE  569.0 0.0016    0.1023  False
+   NNE    SSW  397.0    0.0    0.0011   True
+   NNE     SW  521.0 0.0005    0.0337   True
+   NNE      W  983.0 0.7031       1.0  False
+   NNW     NW  674.0 0.0144    0.6156  False
+   NNW      S  928.0 0.4539       1.0  False
+   NNW     SE  619.0 0.0049    0.2755  False
+   NNW    SSE  480.0 0.0002    0.0118   True
+   NNW    SSW  544.0 0.0009    0.0583  False
+   NNW     SW  504.0 0.0003     0.022   True
+   NNW      W  976.0 0.6687       1.0  False
+    NW      S  813.0  0.129    0.9999  False
+    NW     SE  876.0 0.2728       1.0  False
+    NW    SSE  916.0  0.407       1.0  False
+    NW    SSW  877.0 0.2757       1.0  False
+    NW     SW  832.0 0.1642       1.0  False
+    NW      W  749.0 0.0516    0.9698  False
+     S     SE  740.0 0.0448    0.9515  False
+     S    SSE  761.0 0.0621    0.9854  False
+     S    SSW  602.0 0.0034    0.2013  False
+     S     SW  601.0 0.0033    0.1974  False
+     S      W  950.0 0.5473       1.0  False
+    SE    SSE 1039.0 0.9947       1.0  False
+    SE    SSW 1037.0  0.984       1.0  False
+    SE     SW  986.0  0.718       1.0  False
+    SE      W  667.0 0.0126    0.5674  False
+   SSE    SSW 1031.0  0.952       1.0  False
+   SSE     SW 1039.0 0.9947       1.0  False
+   SSE      W  704.0 0.0246    0.8073  False
+   SSW     SW 1005.0 0.8149       1.0  False
+   SSW      W  638.0 0.0072    0.3785  False
+    SW      W  573.0 0.0018    0.1115  False
 --------------------------------------------Friedman ANOVA Results:
            Source       W    ddof1     ddof2         F        p-unc
 EgoStartPosOrient 0.15318 10.96875 691.03125 11.396003 1.316301e-19
