@@ -20,10 +20,10 @@ import numpy as np
 import pandas as pd
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_CreateDataFramesPerSubject_20240912 as LN_CreateDataFramesPerSubject
-import LN_HandleEyeTrackingProblem_20240912 as LN_HandleEyeTrackingProblem
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_CreateDataFramesPerSubject_Release_20240912 as LN_CreateDataFramesPerSubject
+import LN_HandleEyeTrackingProblem_Release_20240912 as LN_HandleEyeTrackingProblem
+import LN_Figures_Release_20241219 as LN_Figures
 
 # Paths to get/save data
 paths = {'logfiles'    : 'D:/Publications/GardenGameBehavior/Data/DataComplete/Cohort2/', # Folder with log files
@@ -37,6 +37,7 @@ paths = {'logfiles'    : 'D:/Publications/GardenGameBehavior/Data/DataComplete/C
 # Parameters
 params = {'screen_width' : 2560, # Replace with your screen width
           'screen_height' : 1600, # Replace with your screen height
+          'bin_edges' : [-10,10], # bin edges for getting the percentages
           'calibration_trials' : [1,30]} # Should be changed to [1,31] if you use the Garden Game version from 2024
 
 # Get subject data information
@@ -45,6 +46,16 @@ num_subjects = len(subject_data)
 
 # Eye tracking dictionaries (for Figure 8A)
 eye_percentages = []
+
+# Percentage of encoding and retrieval area visited per subject
+enc_percentages = {}
+allo_percentages = {}
+ego_percentages = {}
+num_bins = 40
+
+# Mean turning for starting position in the center vs. peripherie
+center_turning = []
+peripherie_turning = []
 
 # For each subject:
 for i, subject_info in subject_data.iterrows():
@@ -70,7 +81,7 @@ for i, subject_info in subject_data.iterrows():
         
         # if there are problems with the eye tracking gaze, modify the dataframe (only needed for Garden Game version before 08/2024)
         if subject_info.EyeTrackingProblem == True:
-             if elephant is one of the animals, solve the problem
+            # if elephant is one of the animals, solve the problem
             animals = np.unique(periods[(periods.TrialIdx > 0) & (~periods.EncObj.isna())].EncObj)
             if 'Elephant' in animals:
                 eye_modified = LN_HandleEyeTrackingProblem.check_and_handle_eyetracking_problems(periods, eye, 'Elephant', threshold = 0.4)
@@ -95,7 +106,67 @@ for i, subject_info in subject_data.iterrows():
             eye = pd.read_csv(paths['dataframes'] + str(subject_info.SubjectName) + '_eye.csv')
         perc = LN_Functions.percentages_enc_eyetracking(periods, eye)
         eye_percentages.append(perc)
+        
+    # Define bin edges and centers
+    bins = np.linspace(params['bin_edges'][0], params['bin_edges'][1], num_bins + 1) 
+    bin_centers = (bins[:-1] + bins[1:]) / 2  # midpoints of bins
+    
+    # Precompute valid ego bins inside the circle
+    valid_ego_bins = set(
+        (i, j)
+        for i, x in enumerate(bin_centers)
+        for j, z in enumerate(bin_centers)
+        if x**2 + z**2 <= params['bin_edges'][1]**2 
+    )
+    
+    # Bin the coordinates
+    x_enc = timeseries['EncPlayerX']
+    z_enc = timeseries['EncPlayerZ']
+    x_allo = timeseries['AlloRetPlayerXAlloMap']
+    z_allo = timeseries['AlloRetPlayerZAlloMap']
+    x_ego = timeseries['EgoRetPlayerXEgoMap']
+    z_ego = timeseries['EgoRetPlayerZEgoMap']
+    
+    x_bin_enc = np.digitize(x_enc, bins) - 1
+    z_bin_enc = np.digitize(z_enc, bins) - 1
+    x_bin_allo = np.digitize(x_allo, bins) - 1
+    z_bin_allo = np.digitize(z_allo, bins) - 1
+    x_bin_ego = np.digitize(x_ego, bins) - 1
+    z_bin_ego = np.digitize(z_ego, bins) - 1
+    
+    # Mask out-of-bounds
+    mask_enc = (x_bin_enc >= 0) & (x_bin_enc < num_bins) & (z_bin_enc >= 0) & (z_bin_enc < num_bins)
+    mask_allo = (x_bin_allo >= 0) & (x_bin_allo < num_bins) & (z_bin_allo >= 0) & (z_bin_allo < num_bins)
+    mask_ego = (x_bin_ego >= 0) & (x_bin_ego < num_bins) & (z_bin_ego >= 0) & (z_bin_ego < num_bins)
+    
+    # Occupied bins
+    occupied_enc = set(zip(x_bin_enc[mask_enc], z_bin_enc[mask_enc]))
+    occupied_allo = set(zip(x_bin_allo[mask_allo], z_bin_allo[mask_allo]))
+    occupied_ego = set(zip(x_bin_ego[mask_ego], z_bin_ego[mask_ego]))
+    
+    # Valid ego bins only (within circle)
+    visited_ego_bins = occupied_ego & valid_ego_bins
+    
+    # Compute percentages
+    allo_percentages[subject_info.SubjectName] = np.round(
+        len(occupied_allo) / (num_bins * num_bins) * 100, 3
+    )
+    ego_percentages[subject_info.SubjectName] = np.round(
+        len(visited_ego_bins) / len(valid_ego_bins) * 100, 3
+    )
+    
+    enc_percentages[subject_info.SubjectName] = np.round(
+        len(occupied_enc) / (num_bins * num_bins) * 100, 3
+    )
+    
+    # Mean turning for starting position in the center vs. peripherie
+    start_pos_idx = periods[periods.PeriodType == 'starting position'].PeriodIdx.values
+    filtered_timeseries = timeseries[timeseries.PeriodIdx.isin(start_pos_idx)]
+    turn_peripherie, turn_center = LN_Functions.calculate_mean_turning_by_start_position(filtered_timeseries)
+    center_turning.append(turn_center)
+    peripherie_turning.append(turn_peripherie)
 
 # Figure 8A (only for second cohort)
 if (paths['subjectdata'] == 'SubjectData_Cohort2.csv'):
-    LN_Figures.figure8A_eye_gaze_across_subjects(eye_percentages, paths['figures'] + 'Figure8A_20250116.svg')
+    LN_Figures.figure8A_eye_gaze_across_subjects(eye_percentages, paths['figures'] + 'Figure8A_20250606.svg')
+

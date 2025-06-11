@@ -69,10 +69,10 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpNzEuNjB8MjM3LjIzfDM2LjA0fDMxNC43NQ==)'>
-<polyline points='79.12,176.43 109.24,178.14 154.41,180.72 199.58,183.29 229.70,185.01 ' style='stroke-width: 2.56; stroke: #0000FF; stroke-linecap: butt;' />
-<polygon points='79.12,164.87 109.24,167.24 154.41,167.30 199.58,164.82 229.70,162.56 229.70,207.46 199.58,201.76 154.41,194.13 109.24,189.04 79.12,187.98 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #0000FF; fill-opacity: 0.20;' />
-<polyline points='79.12,164.87 109.24,167.24 154.41,167.30 199.58,164.82 229.70,162.56 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
-<polyline points='229.70,207.46 199.58,201.76 154.41,194.13 109.24,189.04 79.12,187.98 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='79.12,175.60 109.24,178.06 154.41,181.76 199.58,185.46 229.70,187.93 ' style='stroke-width: 2.56; stroke: #0000FF; stroke-linecap: butt;' />
+<polygon points='79.12,163.92 109.24,167.18 154.41,168.62 199.58,167.45 229.70,166.03 229.70,209.83 199.58,203.47 154.41,194.90 109.24,188.94 79.12,187.27 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #0000FF; fill-opacity: 0.20;' />
+<polyline points='79.12,163.92 109.24,167.18 154.41,168.62 199.58,167.45 229.70,166.03 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='229.70,209.83 199.58,203.47 154.41,194.90 109.24,188.94 79.12,187.27 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
 <rect x='71.60' y='36.04' width='165.63' height='278.71' style='stroke-width: 2.13;' />
 </g>
 <g clip-path='url(#cpMC4wMHw0MzIuMDB8MC4wMHw0MzIuMDA=)'>
@@ -92,10 +92,10 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMjUwLjkzfDQxNi41NnwzNi4wNHwzMTQuNzU=)'>
-<polyline points='258.45,206.91 288.57,201.82 333.74,194.18 378.91,186.53 409.03,181.44 ' style='stroke-width: 2.56; stroke: #008000; stroke-linecap: butt;' />
-<polygon points='258.45,193.12 288.57,188.60 333.74,178.69 378.91,166.25 409.03,157.25 409.03,205.63 378.91,206.82 333.74,209.66 288.57,215.03 258.45,220.70 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #008000; fill-opacity: 0.20;' />
-<polyline points='258.45,193.12 288.57,188.60 333.74,178.69 378.91,166.25 409.03,157.25 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
-<polyline points='409.03,205.63 378.91,206.82 333.74,209.66 288.57,215.03 258.45,220.70 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='258.45,207.15 288.57,202.26 333.74,194.94 378.91,187.61 409.03,182.73 ' style='stroke-width: 2.56; stroke: #008000; stroke-linecap: butt;' />
+<polygon points='258.45,193.26 288.57,189.08 333.74,179.72 378.91,167.78 409.03,159.09 409.03,206.37 378.91,207.44 333.74,210.16 288.57,215.44 258.45,221.04 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #008000; fill-opacity: 0.20;' />
+<polyline points='258.45,193.26 288.57,189.08 333.74,179.72 378.91,167.78 409.03,159.09 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
+<polyline points='409.03,206.37 378.91,207.44 333.74,210.16 288.57,215.44 258.45,221.04 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt;' />
 <rect x='250.93' y='36.04' width='165.63' height='278.71' style='stroke-width: 2.13;' />
 </g>
 <g clip-path='url(#cpMC4wMHw0MzIuMDB8MC4wMHw0MzIuMDA=)'>
@@ -110,7 +110,7 @@
 </defs>
 <g clip-path='url(#cpNzEuNjB8NDE2LjU2fDM0Mi45MXw0MjYuNTI=)'>
 <text x='244.08' y='360.70' text-anchor='middle' style='font-size: 25.61px; font-family: "Arial";' textLength='198.22px' lengthAdjust='spacingAndGlyphs'>Time viewing the </text>
-<text x='244.08' y='386.82' text-anchor='middle' style='font-size: 25.61px; font-family: "Arial";' textLength='253.31px' lengthAdjust='spacingAndGlyphs'> object and gaze area </text>
+<text x='244.08' y='386.82' text-anchor='middle' style='font-size: 25.61px; font-family: "Arial";' textLength='233.37px' lengthAdjust='spacingAndGlyphs'> object or gaze area </text>
 <text x='244.08' y='412.94' text-anchor='middle' style='font-size: 25.61px; font-family: "Arial";' textLength='240.47px' lengthAdjust='spacingAndGlyphs'>(fraction of encoding)</text>
 </g>
 <g clip-path='url(#cpMC4wMHw0MzIuMDB8MC4wMHw0MzIuMDA=)'>

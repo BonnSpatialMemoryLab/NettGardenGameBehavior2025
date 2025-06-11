@@ -16,29 +16,39 @@ import os
 from scipy.stats import sem
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Figures_20241219 as LN_Figures
+import LN_Figures_Release_20241219 as LN_Figures
+from scipy.stats import ttest_ind, ttest_rel
 
 # Paths to get/save data
-paths = {'cohort1' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_no_excluded_cohort1.csv',
-         'cohort2' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_no_excluded_cohort2.csv',
+paths = {'cohort1_no_excluded' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_no_excluded_cohort1.csv',
+         'cohort2_no_excluded' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_no_excluded_cohort2.csv',
+         'cohort1_analysis' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort1.csv',
+         'cohort2_analysis' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort2.csv',
          'add' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_add.csv',
          'results' : 'D:\Publications\GardenGameBehavior\Results\\',
          'figures' : 'D:\Publications\GardenGameBehavior\Figures\MainFigures\\'}
 
 # Get dataframes 
-cohort1 = pd.read_csv(paths['cohort1'])
-cohort2 = pd.read_csv(paths['cohort2'])
+cohort1 = pd.read_csv(paths['cohort1_no_excluded'])
+cohort2 = pd.read_csv(paths['cohort2_no_excluded'])
 add = pd.read_csv(paths['add'])
 
 # Combine dataframes
-cohorts_1and2 = pd.concat([cohort1, cohort2])
-cohorts_complete = cohorts_1and2
+cohorts_complete = pd.concat([cohort1, cohort2])
 
 # Create figure 2C (trial 0 needed!)
 LN_Figures.figure2C(cohorts_complete, paths['figures'] + 'Figure2C_20250116.svg')
 
 # Remove practice trial for figures 2A and 2B
 cohorts_complete = cohorts_complete[cohorts_complete.TrialIdx > 0]
+
+# Use already filtered data for differences in performance
+cohort1_analysis = pd.read_csv(paths['cohort1_analysis'])
+cohort2_analysis = pd.read_csv(paths['cohort2_analysis'])
+cohort1_analysis = cohort1_analysis[cohort1_analysis.TrialIdx > 0]
+cohort2_analysis = cohort2_analysis[cohort2_analysis.TrialIdx > 0]
+cohorts_1and2 = pd.concat([cohort1_analysis, cohort2_analysis])
+add = add[add.TrialIdx > 0]
 
 # Create figures
 LN_Figures.figure2A(cohorts_complete, paths['figures'] + 'Figure2A_20250116.svg')
@@ -132,5 +142,34 @@ with open(outputfile_basic, 'w') as f:
     f.write(f"SEM: {np.round(sem_dur[sem_dur.PeriodType == 'score'].PeriodDuration.values[0],2)}, ")
     f.write(f"Min.: {np.round(min_dur[min_dur.PeriodType == 'score'].PeriodDuration.values[0],2)}, ")
     f.write(f"Max.: {np.round(max_dur[max_dur.PeriodType == 'score'].PeriodDuration.values[0],2)}\n\n")
+    
+    # t-test performance with vs. without bike handles
+    allo_withbikehandles = cohorts_1and2.groupby(['Subject']).AlloRetRankedPerformance.mean()
+    allo_withoutbikehandles = add.groupby(['Subject']).AlloRetRankedPerformance.mean()
+    ego_withbikehandles = cohorts_1and2.groupby(['Subject']).EgoRetRankedPerformance.mean()
+    ego_withoutbikehandles = add.groupby(['Subject']).EgoRetRankedPerformance.mean()
+    t_allo, p_allo = ttest_ind(allo_withbikehandles, allo_withoutbikehandles)
+    t_ego, p_ego = ttest_ind(ego_withbikehandles, ego_withoutbikehandles)
+    f.write(f"t-test, Allocentric performance (with vs. without bike handles): "
+            f"t = {t_allo:.3f}, p = {p_allo:.3f}\n")
+    
+    f.write(f"t-test, Egocentric performance (with vs. without bike handles): "
+            f"t = {t_ego:.3f}, p = {p_ego:.3f}\n\n")
+    
+    # t-test difference in time viewing gaze area for stable vs. unstable objects
+    stable_eyegazearea = cohort2_analysis[cohort2_analysis.StableObj == True].groupby(['Subject']).EyeEncGazeArea.mean()
+    unstable_eyegazearea = cohort2_analysis[cohort2_analysis.StableObj == False].groupby(['Subject']).EyeEncGazeArea.mean()
+    t, p = ttest_rel(stable_eyegazearea, unstable_eyegazearea)
+    f.write(f"t-test, Time viewing the gaze area (stable vs. unstable objects): "
+            f"t = {t:.3f}, p = {p:.3f}\n\n")
+    
+    # t-test difference in distance to nearest fence for stable vs. unstable objects
+    stable_dist = cohorts_1and2[cohorts_1and2.StableObj == True].groupby(['Subject']).DistObjNearestFence.mean()
+    unstable_dist = cohorts_1and2[cohorts_1and2.StableObj == False].groupby(['Subject']).DistObjNearestFence.mean()
+    t, p = ttest_rel(unstable_dist, stable_dist)
+    f.write(f"t-test, Distance to nearest fence (stable vs. unstable objects): "
+            f"t = {t:.3f}, p = {p:.3f}\n")
+
+
     
          

@@ -5,7 +5,7 @@ Laura Nett, 2024
 """
 
 # Imports
-import LN_Functions_20240912 as LN_Functions
+import LN_Functions_Release_20240912 as LN_Functions
 import numpy as np
 import pandas as pd
 import warnings

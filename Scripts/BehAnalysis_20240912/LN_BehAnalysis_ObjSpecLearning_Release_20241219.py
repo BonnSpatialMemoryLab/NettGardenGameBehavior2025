@@ -15,8 +15,8 @@ from scipy.stats import ttest_ind, chi2_contingency
 import matplotlib.pyplot as plt
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_Figures_Release_20241219 as LN_Figures
 
 # Paths to get/save data
 paths = {'cohort1' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort1.csv',
@@ -152,14 +152,14 @@ axes[0, 0].set_xlabel('Trial index', fontsize=30)
 axes[1, 0].set_xlabel('Trial index', fontsize=30)
 
 # Add titles 
-axes[0, 0].set_title('Participant 18, Horse', fontsize=32, pad = 50)
-axes[0, 1].set_title('Participant 17, Pig', fontsize=32, pad = 50)
-axes[0, 2].set_title('Participant 57, Chicken', fontsize=32, pad = 50)
-axes[0, 3].set_title('Participant 5, Camel', fontsize=32, pad = 50)
-axes[1, 0].set_title('Participant 11, Tiger', fontsize=32, pad = 50)
-axes[1, 1].set_title('Participant 48, Tiger', fontsize=32, pad = 50)
-axes[1, 2].set_title('Participant 46, Cat', fontsize=32, pad = 50)
-axes[1, 3].set_title('Participant 17, Chicken', fontsize=32, pad = 50)
+axes[0, 0].set_title('Participant 18, Horse', fontsize=32)
+axes[0, 1].set_title('Participant 17, Pig', fontsize=32)
+axes[0, 2].set_title('Participant 57, Chicken', fontsize=32)
+axes[0, 3].set_title('Participant 5, Camel', fontsize=32)
+axes[1, 0].set_title('Participant 11, Tiger', fontsize=32)
+axes[1, 1].set_title('Participant 48, Tiger', fontsize=32,)
+axes[1, 2].set_title('Participant 46, Cat', fontsize=32)
+axes[1, 3].set_title('Participant 17, Chicken', fontsize=32)
 
 # Remove x and y-axis labels for non-first-column plots
 for row in axes:
@@ -169,8 +169,10 @@ for row in axes:
         ax.set_xlabel('')
 
 # Adjust layout
+
 plt.tight_layout()
-plt.savefig(paths['figures'] + 'Figure4A_20250116.svg', dpi = 300)
+fig.subplots_adjust(hspace=0.4)
+plt.savefig(paths['figures'] + 'Figure4A_20250606.svg', dpi = 300)
 
 # Figure 4B
 bin_edges = [i * 0.05 for i in range(21)]

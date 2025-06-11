@@ -14,8 +14,8 @@ import sys
 import os
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_Figures_Release_20241219 as LN_Figures
 
 # Paths to get/save data
 paths = {'cohort1' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort1.csv',
@@ -69,6 +69,11 @@ for cohort in cohort_data:
     LN_Functions.LME(cohort['data'][cohort['data'].EncIdx == 0], 'EgoRetRankedPerformance', 'TimeSinceEnc', cohort['path'] + 'ego_feedback.txt')
     LN_Functions.LME(cohort['data'][cohort['data'].EncIdx == 1], 'EgoRetRankedPerformance', 'TimeSinceEnc', cohort['path'] + 'ego_feedback.txt')
     
+    # Influence of feedback when starting orientation is toward north and/or object is within 5 vu of the north fence
+    data_filtered = cohort['data'][(cohort['data'].AlloStartPosOrient8Bins == 'N') | (cohort['data'].DistObjFenceN <= 5)]
+    LN_Functions.LME(data_filtered, 'EgoRetRankedPerformance', 'EgoWithAlloFeedback', cohort['path'] + 'ego_feedback.txt')
+
+    
 # Figure 7B
 # Models and p values 
 model_allo_on_allo = LN_Functions.LME(cohorts_1and2, 'AlloRetRankedPerformance', 'AlloWithAlloFeedback')
@@ -84,7 +89,7 @@ p_ego_on_ego = model_ego_on_ego.pvalues['EgoWithEgoFeedback[T.True]']
 significance_combinations = [[((1, 2), p_allo_on_allo)],  [((1, 2), p_allo_on_ego)],  [((1, 2), p_ego_on_allo)], [((1, 2), p_ego_on_ego)]]
 
 # Create figure 7B
-LN_Figures.figure7b_feedback(cohorts_1and2, significance_combinations, paths['figures'] + 'Figure7B_20250116.svg')
+LN_Figures.figure7b_feedback(cohorts_1and2, significance_combinations, paths['figures'] + 'Figure7B_20250606.svg')
 
 # Figure 7C
 means_allo_cohort1 = LN_Functions.calculate_means_allo(cohort1)

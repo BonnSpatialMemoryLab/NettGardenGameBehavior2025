@@ -15,8 +15,8 @@ import os
 from scipy.stats import ttest_rel, pearsonr
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_Figures_Release_20241219 as LN_Figures
 
 
 # Paths to get/save data
@@ -82,14 +82,20 @@ for cohort in cohort_data:
     LN_Functions.LME(cohort['data'][cohort['data'].StableObj == True], 'AlloRetRankedPerformance', 'TrialIdx', outputfile_allo)
     LN_Functions.LME(cohort['data'][cohort['data'].StableObj == False], 'AlloRetRankedPerformance', 'TrialIdx', outputfile_allo)
     LN_Functions.LME(cohort['data'], 'AlloRetRankedPerformance', 'StableObj', outputfile_allo)
+    LN_Functions.LME(cohort['data'], 'AlloRetRankedPerformance', 'StableObj + DistObjNearestFence', outputfile_allo)
     LN_Functions.LME(cohort['data'], 'AlloRetRankedPerformance', 'TrialIdx * StableObj', outputfile_allo, mean_centered = ['TrialIdx'])
+    LN_Functions.LME(cohort['data'], 'AlloRetRankedPerformance', 'TrialIdx * StableObj + DistObjNearestFence', outputfile_allo, mean_centered = ['TrialIdx'])
+    
     
     # Egocentric
     LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'TrialIdx', outputfile_ego)
     LN_Functions.LME(cohort['data'][cohort['data'].StableObj == True], 'EgoRetRankedPerformance', 'TrialIdx', outputfile_ego)
     LN_Functions.LME(cohort['data'][cohort['data'].StableObj == False], 'EgoRetRankedPerformance', 'TrialIdx', outputfile_ego)
     LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'StableObj', outputfile_ego)
+    LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'StableObj + DistObjNearestFence', outputfile_ego)
     LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'TrialIdx * StableObj', outputfile_ego, mean_centered = ['TrialIdx'])
+    LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'TrialIdx * StableObj + DistObjNearestFence', outputfile_ego, mean_centered = ['TrialIdx'])
+    
     
     # Interaction between retrieval type and object stability (dependent variable is performance)
     # Add columns performance and retrieval type

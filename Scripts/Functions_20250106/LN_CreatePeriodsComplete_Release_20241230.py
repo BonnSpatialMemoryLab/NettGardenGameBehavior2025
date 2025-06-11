@@ -8,7 +8,7 @@ Laura Nett, 2024
 import numpy as np
 import pandas as pd
 import os
-import LN_Functions_20240912 as LN_Functions
+import LN_Functions_Release_20240912 as LN_Functions
 
 def get_periods_complete(paths, params, subject_data):
     # Add subject specific information and concatenate all period dataframes
@@ -44,6 +44,12 @@ def get_periods_complete(paths, params, subject_data):
         periods_complete.loc[is_enc, column] = periods_complete.loc[is_enc, column].apply(
             lambda x: np.fromstring(x.replace('[', '').replace(']', ''), dtype=float, sep=' ') if isinstance(x, str) else x)
 
+    # Add tree configuration
+    periods_complete.loc[is_enc, 'TreeConfig'] = periods_complete.loc[is_enc].apply(lambda row: ('NW_missing' if row['TreeNW'] is np.nan or row['TreeNW'] is None else
+                                                                                                 'NE_missing' if row['TreeNE'] is np.nan or row['TreeNE'] is None else
+                                                                                                 'SW_missing' if row['TreeSW'] is np.nan or row['TreeSW'] is None else
+                                                                                                 'SE_missing'),axis=1)
+    
     # Retrievals
     is_first_ego_ret = is_ego_ret & LN_Functions.is_period_type(periods_complete, 'egocentric retrieval', -1)
     is_first_allo_ret = is_allo_ret & LN_Functions.is_period_type(periods_complete, 'allocentric retrieval', -1)
@@ -92,10 +98,11 @@ def get_periods_complete(paths, params, subject_data):
     periods_complete.loc[is_enc, 'AngleObjPlayerStart'] = angles_start
 
     # Allocentric starting orientation
-    periods_complete.loc[is_enc,'AlloStartPosOrient'] = LN_Functions.map_bins_to_orientations_allo(LN_Functions.bins_for_degrees_orientation(enc_player_start_yaw, n_bins = 8))
+    periods_complete.loc[is_enc,'AlloStartPosOrient8Bins'] = LN_Functions.map_bins_to_orientations_allo(LN_Functions.bins_for_degrees_orientation(enc_player_start_yaw, n_bins = 8), n_bins = 8)
+    periods_complete.loc[is_enc,'AlloStartPosOrient12Bins'] = LN_Functions.map_bins_to_orientations_allo(LN_Functions.bins_for_degrees_orientation(enc_player_start_yaw, n_bins = 12), n_bins = 12)
 
     # Egocentric orientation object to player starting position
-    periods_complete.loc[is_enc,'EgoStartPosOrient'] = LN_Functions.map_bins_to_orientations_ego(LN_Functions.bins_for_degrees_orientation(angles_start, n_bins = 12))
+    periods_complete.loc[is_enc,'EgoStartPosOrient'] = LN_Functions.map_bins_to_orientations_ego(LN_Functions.bins_for_degrees_orientation(angles_start, n_bins = 12), n_bins = 12)
 
     # Distance object to corners
     dist_obj_cornerNE = np.sqrt((params['CornerNE'][1] - enc_obj_x)**2 + (params['CornerNE'][0] - enc_obj_z)**2)
@@ -146,7 +153,7 @@ def get_periods_complete(paths, params, subject_data):
     # If used add eye tracking information
     if any(subject_data.EyeTracking == True):
         # Initialize all necessary columns to 0
-        columns_eyetracking = ['EyeEncFence', 'EyeEncNorthFence', 'EyeEncEastFence', 'EyeEncSouthFence', 'EyeEncWestFence', 'EyeEncGazeArea', 'EyeEncAnimal', 'EyeEncGazeAreaAndAnimal',
+        columns_eyetracking = ['EyeEncFence', 'EyeEncNorthFence', 'EyeEncEastFence', 'EyeEncSouthFence', 'EyeEncWestFence', 'EyeEncGazeArea', 'EyeEncTrees', 'EyeEncAnimal', 'EyeEncGazeAreaAndAnimal',
                                'EyeEncCorner', 'EyeEncNorthEastCorner', 'EyeEncSouthEastCorner', 'EyeEncSouthWestCorner', 'EyeEncNorthWestCorner', 'EyeEncCoverage']
 
         for col in columns_eyetracking:
@@ -228,7 +235,11 @@ def get_periods_complete(paths, params, subject_data):
 
                 # Add viewing time at gaze area
                 if not eye_ground.empty:
-                    periods_complete.loc[idx, 'EyeEncGazeArea'] = sum_relationship/len(gaze_points) 
+                    periods_complete.loc[idx, 'EyeEncGazeArea'] = len(eye_tree)/len(gaze_points) 
+                    
+                # Add viewing time at trees
+                if not eye_tree.empty:
+                    periods_complete.loc[idx, 'EyeEncTrees'] = sum_relationship/len(gaze_points) 
 
                 # Add viewing time at animal    
                 obj = row.EncObj
@@ -282,8 +293,8 @@ def get_periods_complete(paths, params, subject_data):
     periods_complete.to_csv(paths['periods_complete_no_analysis'], index=False)
 
     # Add all parameters to the corresponding retrievals for easier use in the LME
-    column_names_to_fill = ['StableObj', 'EncIdx',
-                            'DistObjPlayerStart', 'AngleObjPlayerStart', 'AlloStartPosOrient', 'EgoStartPosOrient',
+    column_names_to_fill = ['StableObj', 'EncIdx', 'TreeConfig',
+                            'DistObjPlayerStart', 'AngleObjPlayerStart', 'AlloStartPosOrient8Bins','AlloStartPosOrient12Bins', 'EgoStartPosOrient',
                             'DistObjCornerNE', 'DistObjCornerSE', 'DistObjCornerSW',
                             'DistObjCornerNW', 'DistObjNearestCorner', 'DistObjFenceN',
                             'DistObjFenceE', 'DistObjFenceS', 'DistObjFenceW',
@@ -335,8 +346,8 @@ def get_periods_complete(paths, params, subject_data):
             continue
     
     # Add alignment of allocentric starting orientation with cardinal axes
-    periods_complete.loc[periods_complete['AlloStartPosOrient'].isin(['N', 'E', 'S', 'W']), 'AlloStartPosAligned'] = True
-    periods_complete.loc[periods_complete['AlloStartPosOrient'].isin(['NE', 'NW', 'SE', 'SW']), 'AlloStartPosAligned'] = False
+    periods_complete.loc[periods_complete['AlloStartPosOrient8Bins'].isin(['N', 'E', 'S', 'W']), 'AlloStartPosAligned'] = True
+    periods_complete.loc[periods_complete['AlloStartPosOrient8Bins'].isin(['NE', 'NW', 'SE', 'SW']), 'AlloStartPosAligned'] = False
     
     # Save dataframe
     periods_complete.to_csv(paths['periods_complete_analysis'], index = False)

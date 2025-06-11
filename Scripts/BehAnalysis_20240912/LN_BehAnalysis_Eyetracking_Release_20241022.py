@@ -15,8 +15,8 @@ import sys
 import os
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_Figures_Release_20241219 as LN_Figures
 
 # Paths to get/save data
 paths = {'cohort2' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort2.csv',
@@ -29,6 +29,7 @@ cohort2 = cohort2[cohort2.TrialIdx > 0]
 
 outputfile_allo = paths['results_cohort2'] + 'allo_eye.txt'
 outputfile_ego = paths['results_cohort2'] + 'ego_eye.txt'
+
 with open(outputfile_allo, 'w') as f:
     f.write("")  # Clear the file content before running analysis
 with open(outputfile_ego, 'w') as f:
@@ -77,6 +78,7 @@ LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncNorthWestCorner', ou
 # Influence of viewing time at the animal
 LN_Functions.LME(cohort2, 'AlloRetRankedPerformance', 'EyeEncAnimal', outputfile_allo)
 LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncAnimal', outputfile_ego) 
+LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncAnimal * Gender', outputfile_ego, mean_centered = ['EyeEncAnimal']) 
 
 # Influence of viewing time at the gaze area
 LN_Functions.LME(cohort2, 'AlloRetRankedPerformance', 'EyeEncGazeArea', outputfile_allo) 
@@ -90,5 +92,14 @@ LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncGazeAreaAndAnimal', 
 LN_Functions.LME(cohort2, 'AlloRetRankedPerformance', 'EyeEncCoverage', outputfile_allo) 
 LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncCoverage', outputfile_ego)
 
+# Influence of viewing time at the trees
+LN_Functions.LME(cohort2, 'AlloRetRankedPerformance', 'EyeEncTrees', outputfile_allo)
+LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncTrees', outputfile_ego)
+
+# Influence of viewing time at the fences + trees (landmarks)
+cohort2.loc[:, 'EyeEncLandmarks'] = cohort2.loc[:, 'EyeEncFence'] + cohort2.loc[:, 'EyeEncTrees']
+LN_Functions.LME(cohort2, 'AlloRetRankedPerformance', 'EyeEncLandmarks', outputfile_allo)
+LN_Functions.LME(cohort2, 'EgoRetRankedPerformance', 'EyeEncLandmarks', outputfile_ego)
+
 # Figure 8B
-LN_Figures.figure8b_explanation_gaze_area(paths['figures'] + "Figure8B_20250116.svg")
+LN_Figures.figure8b_explanation_gaze_area(paths['figures'] + "Figure8B_20250606.svg")

@@ -796,5 +796,5 @@ regression_plots_eye("EyeEncGazeArea", "Time viewing gaze area \n(fraction of en
 # Figure 8H
 range_animal_gazearea_eye <- range(cohort2_filtered$EyeEncGazeAreaAndAnimal)
 breaks_animal_gazearea_eye <- c(0,1)
-outputfile_8H <- file.path(paths$figures, "Figure8H_20250116.svg")
-regression_plots_eye("EyeEncGazeAreaAndAnimal", "Time viewing the \n object and gaze area \n(fraction of encoding)", breaks_animal_gazearea_eye, range_animal_gazearea_eye, outputfile_8H, plotheight = c(10, 3))
+outputfile_8H <- file.path(paths$figures, "Figure8H_20250606.svg")
+regression_plots_eye("EyeEncGazeAreaAndAnimal", "Time viewing the \n object or gaze area \n(fraction of encoding)", breaks_animal_gazearea_eye, range_animal_gazearea_eye, outputfile_8H, plotheight = c(10, 3))

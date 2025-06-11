@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 import sys
 import seaborn as sns
-import LN_Functions_20240912 as LN_Functions
+import LN_Functions_Release_20240912 as LN_Functions
 
 # Update font, so it fits font from Regression plots generated using R
 plt.rcParams.update({ 'font.family': 'sans-serif', 'font.sans-serif': ['Helvetica', 'Arial']})
@@ -675,8 +675,8 @@ def figure7b_feedback(periods_complete, significance_combinations, outputfile):
     x = np.array(['Without', 'With'])
     y_ticks = [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
     
-    ax_grid = [plt.axes([0.1, 0.6, 0.3, 0.3]), plt.axes([0.6, 0.6, 0.3, 0.3]), 
-               plt.axes([0.1, 0.1, 0.3, 0.3]), plt.axes([0.6, 0.1, 0.3, 0.3])]
+    ax_grid = [plt.axes([0.125, 0.6, 0.3, 0.3]), plt.axes([0.6, 0.6, 0.3, 0.3]), 
+               plt.axes([0.125, 0.15, 0.3, 0.3]), plt.axes([0.6, 0.15, 0.3, 0.3])]
     
     # Get feedback effects
     ego_without_allofeedback, ego_with_allofeedback, allo_without_egofeedback, allo_with_egofeedback,allo_without_allofeedback, allo_with_allofeedback, ego_without_egofeedback, ego_with_egofeedback = LN_Functions.effect_feedback_on_performance(periods_complete)
@@ -719,16 +719,18 @@ def figure7b_feedback(periods_complete, significance_combinations, outputfile):
     ax0.set_xticks([])
     ax0.set_yticks([])
     ax0.axis('off')
-    ax0.plot([0.5, 0.5], [0, 1], color='black', lw=1)
-    ax0.plot([0, 1.05], [0.5, 0.5], color='black', lw=1)
+    ax0.plot([0.5, 0.5], [0, 1], color='white', lw=1)
+    ax0.plot([0.505, 0.505], [0.05, 0.975], color='black', lw=1)
+    ax0.plot([0, 1.05], [0.5175, 0.5175], color='white', lw=1)
+    ax0.plot([0, 1.02], [0.5175, 0.5175], color='black', lw=1)
 
     # Correct the text alignment and rotation
-    ax_grid[0].text(1.2, 1.3, 'Allocentric', ha='center', va='center', fontsize=22)
-    ax_grid[1].text(1.2, 1.3, 'Egocentric', ha='center', va='center', fontsize=22)
-    ax_grid[0].text(-0.8, 0.7, 'Allocentric', ha='center', va='center', rotation=90, fontsize=22)
-    ax_grid[2].text(-0.8, 0.7, 'Egocentric', ha='center', va='center', rotation=90, fontsize=22)
-    ax_grid[0].text(3, 1.4, 'Performance', ha='center', va='center', fontsize=26)
-    ax_grid[2].text(-1.1, 1.3, 'Feedback', ha='center', va='center', rotation=90, fontsize=26)
+    ax_grid[0].text(1.15, 1.3, 'Allocentric', ha='center', va='center', fontsize=22)
+    ax_grid[1].text(1.15, 1.3, 'Egocentric', ha='center', va='center', fontsize=22)
+    ax_grid[0].text(-0.8, 0.685, 'Allocentric', ha='center', va='center', rotation=90, fontsize=22)
+    ax_grid[2].text(-0.8, 0.685, 'Egocentric', ha='center', va='center', rotation=90, fontsize=22)
+    ax_grid[0].text(2.75, 1.4, 'Retrieval', ha='center', va='center', fontsize=26)
+    ax_grid[2].text(-1.1, 1.175, 'Feedback', ha='center', va='center', rotation=90, fontsize=26)
 
     plt.savefig(outputfile, bbox_inches='tight', format = 'svg')
     plt.close()
@@ -830,7 +832,7 @@ def figure8A_eye_gaze_across_subjects(eye_percentages, outputfile):
     
     # Plot boxplot
     plt.boxplot(data, vert=False, patch_artist=True, 
-                boxprops=dict(facecolor="skyblue", color="black"), 
+                boxprops=dict(facecolor="white", color="black"), 
                 medianprops=dict(color="black", linewidth=2),
                 widths=0.9)
     plt.xlabel('Time gazing at aspects of the environment (%)', fontsize=34, labelpad=10)
@@ -896,32 +898,33 @@ def figure8b_explanation_gaze_area(outputfile):
         ax.add_patch(ellipse)
 
     # Draw ellipses
-    draw_ellipse(ax, player_start, animal_1, diameter, '#008000', label = 'Gaze area for object 1')
-    draw_ellipse(ax, player_start, animal_2, diameter, '#0000FF', label = 'Gaze area for object 2')
+    draw_ellipse(ax, player_start, animal_1, diameter, '#800080', label = 'Gaze area for object 1')
+    draw_ellipse(ax, player_start, animal_2, diameter, '#FFA500', label = 'Gaze area for object 2')
 
     # Plot points inside each ellipse
     if len(inside_ellipse_1) > 0:
-        ax.scatter(inside_ellipse_1[:, 0], inside_ellipse_1[:, 1], color='#008000', alpha=0.3, s = 3)
+        ax.scatter(inside_ellipse_1[:, 0], inside_ellipse_1[:, 1], color='#800080', alpha=0.3, s = 3)
     if len(inside_ellipse_2) > 0:
-        ax.scatter(inside_ellipse_2[:, 0], inside_ellipse_2[:, 1], color='#0000FF', alpha=0.3, s = 3)
+        ax.scatter(inside_ellipse_2[:, 0], inside_ellipse_2[:, 1], color='#FFA500', alpha=0.3, s = 3)
 
     # Plot player_start and animal positions
     ax.scatter(*player_start, color='red', s=50)
-    ax.scatter(*animal_1, color='#008000', s=50)
-    ax.scatter(*animal_2, color='#0000FF', s=50)
+    ax.scatter(*animal_1, color='#800080', s=50)
+    ax.scatter(*animal_2, color='#FFA500', s=50)
 
     # Customize plot
     ax.set_xlim(-10, 10)
     ax.set_ylim(-10, 10)
     ax.set_xlabel('x (vu)', fontsize=26, labelpad=-22)
     ax.set_ylabel('z (vu)', rotation = 0, fontsize=26, labelpad = -7)
+    ax.yaxis.set_label_coords(-0.1, 0.45)
     ax.set_xticks([-10, 10])
     ax.set_yticks([-10, 10])
     ax.set_xticklabels(['-10', '10'], fontsize = 24)
     ax.set_yticklabels(['-10', '10'], fontsize = 24)
     ax.text(player_start[0] - 6, player_start[1] - 1, 'Starting \nposition', color='red', fontsize=24)
-    ax.text(animal_1[0] + 0.5, animal_1[1], 'Object 1', color='#008000', fontsize=24)
-    ax.text(animal_2[0] + 0.5, animal_2[1] - 0.5, 'Object 2', color='#0000FF', fontsize=24)
+    ax.text(animal_1[0] + 0.5, animal_1[1], 'Object 1', color='#800080', fontsize=24)
+    ax.text(animal_2[0] + 0.5, animal_2[1] - 0.5, 'Object 2', color='#FFA500', fontsize=24)
     plt.legend(loc = 'upper left', frameon = False, fontsize = 20, handlelength = 1)
     plt.savefig(outputfile, bbox_inches='tight', format = 'svg') 
     plt.close()

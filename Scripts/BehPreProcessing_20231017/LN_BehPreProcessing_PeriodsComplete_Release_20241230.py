@@ -9,7 +9,7 @@ import pandas as pd
 import sys
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_CreatePeriodsComplete_20241230 as LN_CreatePeriodsComplete
+import LN_CreatePeriodsComplete_Release_20241230 as LN_CreatePeriodsComplete
 
 # Parameters
 params = {'ArenaEdgeLength' : 20, # Length of arena edge
@@ -58,7 +58,6 @@ paths_add = {'logfiles'    : 'D:/Publications/GardenGameBehavior/Data/DataComple
              'logfile_prefix' : 'GardenGame_',
              'logfile_suffix' : '_LogFile.txt',
              'periods_suffix' : '_periods.csv'}
-
 
 # Create periods complete for cohort 1
 subject_data_cohort1 = pd.read_csv(paths_cohort1['logfiles'] + paths_cohort1['subjectdata'], sep = ';')

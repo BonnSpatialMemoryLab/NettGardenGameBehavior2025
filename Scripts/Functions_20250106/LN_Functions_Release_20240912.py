@@ -12,6 +12,7 @@ import math
 import os
 import statsmodels.api as sm
 import pingouin as pg
+from scipy.stats import f_oneway
 from statsmodels.stats.multicomp import MultiComparison
 import scipy.stats as stats
 from scipy.optimize import curve_fit
@@ -148,26 +149,45 @@ def bins_for_degrees_orientation(angle_array, n_bins):
     
     return categorized_labels
 
-# Map bins to allocentric orientations (N, NE, E, SE, S, SW, W, NW)
-def map_bins_to_orientations_allo(binned_array):
+# Map bins to allocentric orientations 
+def map_bins_to_orientations_allo(binned_array, n_bins):
     # Mapping of bin labels to orientations
-    bin_to_orientation = {
-        'Bin1': 'W',
-        'Bin2': 'SW',
-        'Bin3': 'S',
-        'Bin4': 'SE',
-        'Bin5': 'E',
-        'Bin6': 'NE',
-        'Bin7': 'N',
-        'Bin8': 'NW'
-    }
-    
+    if n_bins == 8:
+        bin_to_orientation = {
+            'Bin1': 'W',
+            'Bin2': 'SW',
+            'Bin3': 'S',
+            'Bin4': 'SE',
+            'Bin5': 'E',
+            'Bin6': 'NE',
+            'Bin7': 'N',
+            'Bin8': 'NW'
+        }
+    elif n_bins == 12:
+        bin_to_orientation = {
+            'Bin1': 'W',
+            'Bin2': 'SW',
+            'Bin3': 'SSW',
+            'Bin4': 'S',
+            'Bin5': 'SSE',
+            'Bin6': 'SE',
+            'Bin7': 'E',
+            'Bin8': 'NE',
+            'Bin9': 'NNE',
+            'Bin10': 'N',
+            'Bin11': 'NNW',
+            'Bin12': 'NW'
+        }
+    else:
+        raise ValueError("Function must be modified to work with a different number of bins than 8 or 12.")
     # Convert bins to orientations
     orientations = [bin_to_orientation.get(bin_label, np.nan) for bin_label in binned_array]
     return(orientations)
 
 # Map bins to egocentric orientations (A, AR, RA, R, RB, BR, B, BL, LB, L, LA, AL)
-def map_bins_to_orientations_ego(binned_array):
+def map_bins_to_orientations_ego(binned_array, n_bins = 12):
+    if n_bins != 12:
+        raise ValueError("Function must be modified to work with a different number of bins than 12.")
     # Mapping of bin labels to orientations
     bin_to_orientation = {
         'Bin1': 'B',
@@ -691,3 +711,54 @@ def collect_values_by_key(dict_list):
     
     return dict_together
 
+# Get mean turning for starting positions in the center vs the peripherie
+def calculate_mean_turning_by_start_position(timeseries):
+    results = []
+
+    for period, group in timeseries.groupby('PeriodIdx'):
+        # Get starting position
+        start_x = group.iloc[0]['EncPlayerX']
+        start_z = group.iloc[0]['EncPlayerZ']
+
+        # Add whether starting position is in the center or periphery
+        start_pos_center = (-5 <= start_x <= 5) and (-5 <= start_z <= 5)
+
+        # Detect first change in EncPlayerX or EncPlayerZ
+        dx = group['EncPlayerX'].diff().abs()
+        dz = group['EncPlayerZ'].diff().abs()
+        movement_index = (dx > 0) | (dz > 0)
+
+        # Find index of first movement
+        first_movement = movement_index.idxmax() if movement_index.any() else None
+
+        if first_movement is not None and first_movement != group.index[0]:
+            pre_move_yaw = group.loc[:first_movement, 'EncPlayerCartYaw'].values
+            yaw_unwrapped = np.unwrap(pre_move_yaw)
+            yaw_diff = np.abs(np.diff(yaw_unwrapped))
+            degrees_turned = yaw_diff.sum() 
+        else:
+            degrees_turned = 0.0
+
+        results.append({
+            'StartPosCenter': start_pos_center,
+            'DegreesTurnedBeforeMovement': degrees_turned
+        })
+
+    # Convert to DataFrame
+    results_df = pd.DataFrame(results)
+
+    # Calculate mean turning for center and periphery
+    mean_turning = results_df.groupby('StartPosCenter')['DegreesTurnedBeforeMovement'].mean()
+
+    return mean_turning
+
+# Function to run ANOVA and write result to a file
+def run_anova_and_save(df, score_col, group_col, output_filename):
+    grouped = df.groupby(['Subject', group_col])[score_col].mean().reset_index()
+    groups = grouped.groupby(group_col)[score_col].apply(list)
+    stat, pval = f_oneway(*groups)
+
+    # Write result to file
+    with open(output_filename, 'a') as f:
+        f.write(f"\nOne-way ANOVA for {score_col} grouped by {group_col}\n")
+        f.write(f"F-statistic: {stat:.4f}, p-value: {pval:.4g}\n")

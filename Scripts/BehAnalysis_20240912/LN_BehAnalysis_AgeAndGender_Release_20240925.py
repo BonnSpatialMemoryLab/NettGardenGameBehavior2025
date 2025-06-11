@@ -16,7 +16,7 @@ import sys
 import os
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
+import LN_Functions_Release_20240912 as LN_Functions
 
 # Paths to get/save data
 paths = {'cohort1' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort1.csv',

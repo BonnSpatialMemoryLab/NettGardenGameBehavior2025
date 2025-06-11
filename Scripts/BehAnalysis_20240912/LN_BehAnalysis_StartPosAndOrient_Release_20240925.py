@@ -15,8 +15,8 @@ import sys
 import os
 path_to_functions = '..\Functions_20250106'
 sys.path.append(path_to_functions)
-import LN_Functions_20240912 as LN_Functions
-import LN_Figures_20241219 as LN_Figures
+import LN_Functions_Release_20240912 as LN_Functions
+import LN_Figures_Release_20241219 as LN_Figures
 
 # Paths to get/save data
 paths = {'cohort1' : 'D:\Publications\GardenGameBehavior\Data\PreProcessing\periods_complete_analysis_cohort1.csv',
@@ -56,12 +56,15 @@ for cohort in cohort_data:
     LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'DistObjPlayerStart', outputfile_ego) 
     
     # Alignment with cardinal axes
+    LN_Functions.LME(cohort['data'], 'AlloRetRankedPerformance', 'AlloStartPosAligned', outputfile_allo) 
     LN_Functions.LME(cohort['data'], 'EgoRetRankedPerformance', 'AlloStartPosAligned', outputfile_ego) 
     
     # Friedman test for starting orientation
-    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'AlloRetRankedPerformance', 'AlloStartPosOrient', outputfile_allo)
+    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'AlloRetRankedPerformance', 'AlloStartPosOrient8Bins', outputfile_allo)
+    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'AlloRetRankedPerformance', 'AlloStartPosOrient12Bins', outputfile_allo)
     LN_Functions.friedman_test_influence_orientation(cohort['data'], 'AlloRetRankedPerformance', 'EgoStartPosOrient', outputfile_allo)
-    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'EgoRetRankedPerformance', 'AlloStartPosOrient', outputfile_ego)
+    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'EgoRetRankedPerformance', 'AlloStartPosOrient8Bins', outputfile_ego)
+    LN_Functions.friedman_test_influence_orientation(cohort['data'], 'EgoRetRankedPerformance', 'AlloStartPosOrient12Bins', outputfile_ego)
     LN_Functions.friedman_test_influence_orientation(cohort['data'], 'EgoRetRankedPerformance', 'EgoStartPosOrient', outputfile_ego)
     
 # Figure 6C
